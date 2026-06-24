@@ -1,0 +1,45 @@
+# =====================================================
+# AEO WORKER ENGINE — Node.js .gitignore
+# =====================================================
+
+# ── Dependencies ──────────────────────────────────
+node_modules/
+
+# ── Environment & Secrets (NEVER commit these) ────
+.env
+.env.local
+.env.production
+.env.staging
+*.env
+
+# ── Playwright Browser Binaries ───────────────────
+# These are huge (~300MB) and installed via `playwright install`
+playwright-browsers/
+ms-playwright/
+.playwright/
+
+# ── Logs ──────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ── Test / Debug Scripts ──────────────────────────
+test-telegram.js
+test_insert.js
+check_all_tables.js
+check_logs.js
+test-*.js
+
+# ── Deprecated Workers ────────────────────────────
+src/workers/*.deprecated
+
+# ── OS / Editor ───────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/settings.json
+
+# ── Build Output (if ever added) ──────────────────
+dist/
+build/

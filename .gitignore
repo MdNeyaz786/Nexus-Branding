@@ -1,0 +1,71 @@
+# =====================================================
+# NEXUS BRANDING — Next.js Root .gitignore
+# =====================================================
+
+# ── Dependencies ──────────────────────────────────
+node_modules/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# ── Next.js Build Output ──────────────────────────
+.next/
+out/
+build/
+dist/
+
+# ── Environment & Secrets (NEVER commit these) ────
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+.env.staging
+*.env
+
+# ── TypeScript ────────────────────────────────────
+*.tsbuildinfo
+next-env.d.ts
+
+# ── Vercel ────────────────────────────────────────
+.vercel/
+
+# ── Debug scripts & test files (project root) ─────
+debug_upsert.mjs
+debug_upsert_ai.mjs
+test-supabase.mjs
+
+# ── Logs ──────────────────────────────────────────
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+*.log
+
+# ── OS / Editor ───────────────────────────────────
+.DS_Store
+Thumbs.db
+*.pem
+.idea/
+.vscode/settings.json
+
+# ── Coverage & Testing ────────────────────────────
+/coverage
+
+# ── Playwright (if used in Next.js tests) ─────────
+/playwright-report/
+/test-results/
+
+# ── Worker Engine — handled by its own .gitignore ─
+# (sub-project has its own .gitignore)
+aeo-worker-engine/node_modules/
+aeo-worker-engine/.env
+aeo-worker-engine/playwright-browsers/
+aeo-worker-engine/test-telegram.js

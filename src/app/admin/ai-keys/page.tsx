@@ -1,0 +1,30 @@
+import { Metadata } from "next";
+import { AiKeysForm } from "@/components/admin/AiKeysForm";
+import { KeyRound } from "lucide-react";
+import { getAiKeysStatus } from "@/app/actions/admin";
+
+export const metadata: Metadata = {
+  title: "AI Keys Vault | AEO Admin",
+};
+
+export default async function AiKeysPage() {
+  const existingAiKeys = await getAiKeysStatus();
+
+  return (
+    <div className="space-y-6">
+      <div className="flex items-center gap-3 mb-6">
+        <div className="p-2 bg-indigo-500/10 rounded-lg border border-indigo-500/20">
+          <KeyRound className="w-6 h-6 text-indigo-400" />
+        </div>
+        <div>
+          <h2 className="text-2xl font-bold tracking-tight text-white">AI Keys Vault</h2>
+          <p className="text-sm text-slate-400">Manage Gemini API keys for the AEO engine.</p>
+        </div>
+      </div>
+      
+      <div className="bg-slate-900 border border-slate-800 shadow-xl rounded-xl p-6 relative overflow-hidden">
+        <AiKeysForm existingKeys={existingAiKeys} />
+      </div>
+    </div>
+  );
+}
